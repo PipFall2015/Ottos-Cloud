@@ -6,7 +6,7 @@
 #include <ariaUtil.h>
 #include <iostream>
 
-class PipGoToHome : public ArAction
+/*class PipGoToHome : public ArAction
 {
  public:
   // constructor
@@ -26,6 +26,6 @@ class PipGoToHome : public ArAction
   // This is the only part of the class definition you may need to change.
   // If you have any variables you want the robot to keep track of or
   // remember, declare them here.
-};
+};*/
 
 #endif
