@@ -36,18 +36,21 @@ ArActionDesired *PipGoToHome::fire(ArActionDesired currentDesired) {
 // that you want the robot to take if this rule fires. Initially, we
 // must clear any previous actions.
   myDesired.reset();
-  ArActionGoto gotoPoseAction("goto",ArPose(0.0, 0.0, 0.0),100,400, 150,7);
+  myDesired.setVel(500);
+  sleep(5);
+  myDesired.setVel(0);
+  ///ArActionGoto gotoPoseAction("goto",ArPose(0.0, 0.0, 0.0),100,400, 150,7);
 
 // Add your code to access the sonar sensors, decide whether the reaction
 // fires, and add commands to myDesired if it does.
 
 
 
-  std::cout << "Going home ...\n" << std::endl;
+  ///std::cout << "Going home ...\n" << std::endl;
 
 
 
-  myDesired.merge(&gotoPoseAction);
+  ///myDesired.merge(&gotoPoseAction);
 
 
 
