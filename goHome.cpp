@@ -21,7 +21,7 @@ void PipGoToHome::setRobot(ArRobot *robot) {
 // check if list is empty,else grab first item, set to myLaser, pew pew pew
 
   if (myLaser == NULL){
-    std::cout << "deactivating cause no laser" << std::endl;
+    std::cout << "deactivating because there is no laser attached" << std::endl;
     deactivate();
   }
   std::cout << "Message: PipFollow laser check: " << myLaser->getName() << std::endl;
