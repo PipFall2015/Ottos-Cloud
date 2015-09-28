@@ -1,0 +1,31 @@
+Script started on Mon 09 Feb 2015 10:17:36 AM EST
+]0;Pip@pip:~/Documents/PipFall2014[?1034h[Pip@pip PipFall2014]$ ./main 
+Added arguments from file '/etc/Aria.args'
+Could not connect to simulator, connecting to robot through serial port /dev/ttyUSB0.
+Syncing 0
+Syncing 1
+Syncing 2
+Connected to robot.
+Name: Goucher_4294
+Type: Pioneer
+Subtype: p3dx-sh
+ArConfig: Config version: 2.0
+Loaded robot parameters from /usr/local/Aria/params/p3dx-sh.p
+ArRobotConnector: Connecting to MTX batteries (if neccesary)...
+ArRobotConnector: Connecting to MTX sonar (if neccesary)...
+ArSonarConnector::connectSonars(), finally connecting to each sonar...
+ArLaserConnector: Using robot params for connecting to laser 1 (urg2.0_1)
+ArLaserConnector: Set serial port to open /dev/ttyACM0
+Connected to robot.
+urg2.0_1: Connected to laser
+1
+Hello, World!
+connected
+Unit Choices: 
+deactivating cause no laser
+Aria: Received signal 'SIGSEGV'. Exiting.
+Disconnecting from robot.
+urg2.0_1: Disconnecting
+]0;Pip@pip:~/Documents/PipFall2014[Pip@pip PipFall2014]$ exit
+
+Script done on Mon 09 Feb 2015 10:17:55 AM EST
