@@ -1,5 +1,6 @@
 #include "goHome.hh"
-
+#include <cmath>
+/*
 // Constructor for the reactive class. Add any  you need (which
 // will probably be stored in a state variable).
 
@@ -10,6 +11,7 @@ PipGoToHome::PipGoToHome() : ArAction("goHome") {
 
 // This will look the same for any reactive class. Just substitute the
 // name of your class for "Drive".
+
 
 void PipGoToHome::setRobot(ArRobot *robot) {
   myRobot = robot;
@@ -57,4 +59,90 @@ ArActionDesired *PipGoToHome::fire(ArActionDesired currentDesired) {
 
 // Return the list of desired actions.
   return &myDesired;
+}*/
+
+class ActionGoToHome : public ArAction
+{
+public:
+    ActionGoHome(int direction, int location);
+
+    virtual ~ActionGoToHome(void) {};
+
+    virtual ArActionDesired *fire(ArActionDesired currentDesired)
+
+    virtual void setRobot(ArRobot *robot);
+
+protected:
+    ArActionDesired myDesired;
+
+
+};
+
+    ActionGoToHome::ActionGoHome() :
+      ArAction("Go Home")
+    {
+        myRobot = NULL;
+        myLaser = NULL;
+
+    }
+
+    void ActionGoToHome::setRobot(::ActionGoToHome::ArRobot *robot) {
+        myRobot = robot;
+        myLaser = myRobot->findRangeDevice("urg2.0_1");
+
+        std::list< ArRangeDevice * > *list = myRobot->getRangeDeviceList() << std::endl;
+            if (myLaser == NULL) {
+                std::cout << "deactivating because there is not an attached laser" << std::endl;
+                deactivate();
+            }
+        std::cout << "Message: PipFollow laser check: " << myLaser->getName() << std::endl;
+    }
+
+
+ArActionDesired * ActionGoToHome::fire(ArActionDesired currentDesired) {
+    myDesired.reset();
+
+    double angle = 0;
+    double dist = myLaser->currentReadingPolar(-90, 90, &angle);
+    double xPose = myRobot->getPose().getX();
+    double yPose = myRobot->getPose().getY();
+
+    if(dist > 300) {
+        myDesired.setDeltaHeading(angle);
+        myDesired.setVel(800);
+    }
+    else {
+        myDesired.setVel(0);
+    }
+
+
+    return &myDesired;
 }
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+

@@ -1,12 +1,12 @@
-#include "/usr/local/Aria-2.8.1/include/Aria.h"
-#include </usr/local/Aria-2.8.1/include/ArUrg_2_0.h>
-#include </usr/local/Aria-2.8.1/include/ariaUtil.h>
+#include "Aria.h"
+#include <ArUrg_2_0.h>
+#include <ariaUtil.h>
 #include <iostream>
 #include <iomanip>
 #include "follow.hh"
 #include "goHome.hh"
-#include </usr/local/Aria-2.8.1/include/ArActionGroup.h>
-#include </usr/local/Aria-2.8.1/include/ArFunctor.h>
+#include <ArActionGroup.h>
+#include <ArFunctor.h>
 #include <stdio.h>
 
 #define MAIN_ROBOT_PORT 8101
