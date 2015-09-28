@@ -15,8 +15,8 @@ PipGoToHome::PipGoToHome() : ArAction("goHome") {
 
 void PipGoToHome::setRobot(ArRobot *robot) {
   myRobot = robot;
-  myLaser = myRobot->findRangeDevice("urg2.0_1");                               
-                               
+  myLaser = myRobot->findRangeDevice("urg2.0_1");
+
 
   std::list< ArRangeDevice * > *list = myRobot->getRangeDeviceList();
 
@@ -28,13 +28,13 @@ void PipGoToHome::setRobot(ArRobot *robot) {
   }
   std::cout << "Message: PipFollow laser check: " << myLaser->getName() << std::endl;
 }
-  
+
 // This is the key method for your reactive classes, as it defines what
 // action should be taken. Again, add the sensing/action code you need.
 
 ArActionDesired *PipGoToHome::fire(ArActionDesired currentDesired) {
 
-// The "myDesired" variable is a place to store the list of actions 
+// The "myDesired" variable is a place to store the list of actions
 // that you want the robot to take if this rule fires. Initially, we
 // must clear any previous actions.
   myDesired.reset();
