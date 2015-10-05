@@ -19,7 +19,7 @@ class PipGoToHome : public ArAction
   virtual void setRobot(ArRobot *robot);
  protected:
   // this is to hold the laser device form the robot (required)
-  ArRangeDevice *myLaser;
+ //ArRangeDevice *myLaser;
   // what the action wants to do (required)
   ArActionDesired myDesired;
 

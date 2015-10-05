@@ -13,7 +13,7 @@ PipGoToHome::PipGoToHome() : ArAction("goHome") {
 
 void PipGoToHome::setRobot(ArRobot *robot) {
   myRobot = robot;
-  myLaser = myRobot->findRangeDevice("urg2.0_1");                               
+  /*myLaser = myRobot->findRangeDevice("urg2.0_1");
                                
 
   std::list< ArRangeDevice * > *list = myRobot->getRangeDeviceList();
@@ -24,7 +24,7 @@ void PipGoToHome::setRobot(ArRobot *robot) {
     std::cout << "deactivating because there is no laser attached" << std::endl;
     deactivate();
   }
-  std::cout << "Message: PipFollow laser check: " << myLaser->getName() << std::endl;
+  std::cout << "Message: PipFollow laser check: " << myLaser->getName() << std::endl;*/
 }
   
 // This is the key method for your reactive classes, as it defines what
@@ -37,7 +37,7 @@ ArActionDesired *PipGoToHome::fire(ArActionDesired currentDesired) {
 // must clear any previous actions.
   myDesired.reset();
   myDesired.setVel(500);
-  sleep(5);
+  sleep(1000);
   myDesired.setVel(0);
   ///ArActionGoto gotoPoseAction("goto",ArPose(0.0, 0.0, 0.0),100,400, 150,7);
 
