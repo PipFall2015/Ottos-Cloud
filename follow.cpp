@@ -64,7 +64,7 @@ ArActionDesired *PipFollow::fire(ArActionDesired currentDesired) {
 
   if(dist > 300) {
     myDesired.setDeltaHeading(angle);
-    myDesired.setVel(500);
+    myDesired.setVel(-500);
   }
   else {
     myDesired.setVel(0);
